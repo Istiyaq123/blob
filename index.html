@@ -1,32 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>IDK</title>
-<body onload="onload()">
-
-<p><video id="image" controls>
-</video></p>
-
-<script>
-function onload() {
-	var xhr = new XMLHttpRequest();
-    
-    xhr.open("GET", "./blob.jpeg");
-    xhr.responseType = "arraybuffer";
-    
-    xhr.onload = function (e) {
-    	var blob = new Blob([xhr.response]);
-        var url = URL.createObjectURL(blob);
-        
-        console.log(url);
-        
-        var img = document.getElementById("image");
-        img.src = url;
-    }
-    
-    xhr.send();
-}
-
-</script>
-
-</body>
+    <body>
+        <p>Video</p>
+        <video controls width="500">
+            <source src="blob.png">
+        </video>
+    </body>
 </html>
